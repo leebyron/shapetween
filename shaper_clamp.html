@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ clamp()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper::clamp()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Requires that <strong>shape()</strong> return between 0 and 1 only.<br><br>
+			Shapers by default are not clamped in order to allow for interesting spacial animation.
+			If you are using shaper functions for another domain where numbers outside of 0 to 1 don't make sense,
+			then it's highly suggested to call the clamp() method after constructing a Shaper.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BezierShaper curve;
+
+void setup(){  
+  curve = new BezierShaper();
+  curve.setInHandle( 0.5, -0.5 );
+  curve.setOutHandle( 0.5, 1.5 );
+}
+
+void draw(){
+  background(255);
+  
+  translate( width/6, height/6 );
+  scale( 0.66 );
+  
+  fill(230);
+  noStroke();
+  rect(0,0,width,height);
+  
+  noFill();
+  stroke(0);
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, curve.shape( i )*height );
+  endShape();
+}
+
+void mousePressed(){
+  curve.clamp();
+}
+
+void mouseReleased(){
+  curve.noClamp();
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				clamp()</code></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_noclamp.html">noClamp()</a><br />
+				<a href="shaper_shape.html">shape()</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ end()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::end()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				Ends the tween, setting the time to 1. If this tween is playing in reverse, this will set the time to 0.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(this, 2);
+  ani.repeat();
+}
+
+void draw(){
+  background(255);
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void mousePressed(){
+  ani.end();
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				end()</code></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_end.html">start()</a><br>
+				<a href="tween_pause.html">pause()</a><br>
+				<a href="tween_resume.html">resume()</a><br>
+				<a href="tween_seek.html">seek()</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

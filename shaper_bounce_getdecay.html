@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BounceShaper \ getDecay()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_bounce.html">BounceShaper</a>
+		</div>
+		
+		<div class="title">
+			BounceShaper::getDecay()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Returns the decay of the bounces. The decay specifies how high the next bounce should be in relation to the current bounce.
+			For example if decay is set to 1/3 (the default) and the first bounce reaches a peak of 1, the next bounce will reach 1/3rd, and the
+			next will reach 1/9th, etc.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BounceShaper bounce;
+Tween ball;
+
+void setup(){
+  size(200,200);
+  ball = new Tween(this, 1);
+  ball.setPlayMode( Tween.REPEAT );
+  bounce = new BounceShaper();
+  ball.setEasing(bounce);
+}
+
+void draw(){
+  background( lerp(0,255,bounce.getDecay()), lerp(255,0,bounce.getDecay()), 0);
+  
+  for( int i=50; i<150; i++ )
+    point( i, 50 + bounce.shape( norm(i,50,150) )*100 );
+  
+  ellipse( 100, lerp(30, 190, ball.position()), 20, 20 );
+}
+
+void mouseMoved(){
+  bounce.setDecay( norm(mouseX, 50, 150) );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				getDecay()</code></dd>
+							
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_bounce_getdecay.html">getDecay()</a><br />
+				<a href="shaper_bounce.html">BounceShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

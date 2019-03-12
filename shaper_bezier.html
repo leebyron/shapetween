@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BezierShaper</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			BezierShaper
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Bezier" archive="examples/Bezier.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>BezierShaper uses a Bezier curve through x, f(x) space in order to have more control over
+				shaping and easing. It is initialized with handles which create a smooth ease in and out, and these
+				handles can be manually set.</p>
+				<p>BezierShaper is capable of producing values outside of the 0 to 1 range, if you are working in a domain
+				which requires 0 to 1, be sure to use <strong>clamp()</strong>.</p>
+				<p>You may note that BezierShaper by default creates an ease in out shape, even though its mode is set to IN.
+				Setting the mode to something other than IN can create interesting effects, but may not be what you expect.
+				BezierShaper expects the user to create their own easing patterns by setting the handles.</p>
+				<p>May be referred to as Tween.BEZIER for use in <strong>setEasing()</strong>.</p>
+			</div>
+			
+		</div>
+		
+		<dl class="column full">
+		
+			<dt>Constructor</dt>
+			<dd><code>
+				BezierShaper()<br>
+				BezierShaper( shapeMode )<br>
+				BezierShaper( shapeMode, transition )<br>
+				BezierShaper( shapeMode, transitionX, transitionY )</code></dd>
+			
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shapeMode</dt>
+					<dd>int: a shaping mode such as Shaper.SIGMOID</dd>
+					
+					<dt>transitionX</dt>
+					<dd>float: sets the transition point in the x dimension for SIGMOID and SEAT</dd>
+					
+					<dt>transitionY</dt>
+					<dd>float: sets the transition point in the f(x) dimension, for skewing the transition</dd>
+				</dl>
+			</dd>
+			
+			<dt>Methods</dt>
+			<dd>
+				<dl class="list">
+					<!-- Basic Variables -->
+					<dt><a href="shaper_bezier_setinhandle.html">setInHandle()</a></dt>
+					<dd>Sets the handle of the bezier curve for the in point</dd>
+					
+					<dt><a href="shaper_bezier_setouthandle.html">setOutHandle()</a></dt>
+					<dd>Sets the handle of the bezier curve for the out point</dd>
+				</dl>
+			</dd>
+				
+			<dt>Implementation</dt>
+			<dd>
+<pre>f(x){
+  ?
+}</pre></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper.html">Shaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

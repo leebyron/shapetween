@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ speed()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::speed()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				<p>Returns the current speed of the Tween, relative to straight linear motion being 1.
+				The 'units' for this measure of speed are in units per duration. Ie. In linear motion over
+				100 pixels for a duration of 1 second, <strong>speed()</strong> would return 1, meaning
+				"100 pixels per second." If easing were applied and <strong>speed()</strong> returns 0.25
+				this translates to "25 pixels per second."</p>
+				<p>Speed is often useful in determining Squash and Stretch, a common animation technique to
+				convey a soft body.</p>
+				<p>This is identical to the current slope of the easing shape function.</p></dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+NEED EXAMPLE HERE</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				speed()</code></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_force.html">force()</a><br>
+				<a href="shaper_slope.html">slope()</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

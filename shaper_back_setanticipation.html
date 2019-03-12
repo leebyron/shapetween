@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BackShaper \ setAnticipation()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_back.html">BackShaper</a>
+		</div>
+		
+		<div class="title">
+			BackShaper::setAnticipation()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets the anticipation (number greater than 0) as a peak motion backwards before follow through.
+			If you set anticipation to 0.3, the Tween would move from 0 to -0.3 to 1.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BackShaper back;
+Tween punch;
+
+void setup(){
+  size(200,200);
+  punch = new Tween(this, 0.5);
+  punch.setPlayMode( Tween.REVERSE_REPEAT );
+  back = new BackShaper();
+  back.setAnticipation( 0.6 );
+  punch.setEasing(back);
+}
+
+void draw(){
+  background(255);
+
+  line( 160, 20, 160, 180 );
+  ellipse( lerp(75, 150, punch.position()), 100, 20, 20 );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setAnticipation(howFar)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>howFar</dt>
+					<dd>The amount of anticipation<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_back_getAnticipation.html">getAnticipation</a><br />
+				<a href="shaper_back.html">BackShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

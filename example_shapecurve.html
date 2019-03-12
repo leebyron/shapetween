@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shape Curve</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Example: Shape Curve
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Shape_Curve" archive="examples/Shape_Curve.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>Draws the graph of a shaper function, with x being the input to the function and y as the output.
+				You can see from these graphs the condensation of values that occurs during an ease in or ease out.</p>
+				<p>Clicking on the applet causes it to cycle through the three QUADRATIC shape functions: ease in,
+				ease out, and ease in and out.</p>
+			</div>
+		
+			<div class="code">
+<pre>import megamu.shapetween.*;
+
+Tween ani;
+Class shaperFunction;
+
+void setup(){
+  size(200,200);
+  noFill();
+  noLoop();
+  
+  shaperFunction = Shaper.QUADRATIC;
+}
+
+void draw(){
+  background(255);
+  
+  // draw the main curve
+  stroke(0);
+  beginShape();
+  for( float i=0; i<=1; i += 0.05 ){
+    vertex( i*width, height - Shaper.shape( shaperFunction, i )*height );
+  }
+  vertex( width, 0);
+  endShape();
+
+  // draw the translated edges
+  for( float n=0; n<=1; n += 0.125 ){
+    float x = n*width;
+    float y = height - Shaper.shape( shaperFunction, n )*height;
+
+    stroke(0,255,100);
+    line( x, y, x, height );
+
+    stroke(100,50,255);
+    line( x, y, 0, y );
+  }
+}
+
+void mousePressed(){
+  if( shaperFunction == Shaper.QUADRATIC ){
+    shaperFunction = Shaper.QUAD_IN;
+  }else if( shaperFunction == Shaper.QUAD_IN ){
+    shaperFunction = Shaper.QUAD_OUT;
+  }else{
+    shaperFunction = Shaper.QUADRATIC;
+  }
+  redraw();
+}</pre>
+			</div>
+		
+		</div>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

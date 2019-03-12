@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BlendShaper \ setShaperOne()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_blend.html">BlendShaper</a>
+		</div>
+		
+		<div class="title">
+			BlendShaper::setShaperOne()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets the first of the two shapers this blender will use.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BlendShaper blend;
+Shaper lens;
+Shaper lens2;
+
+void setup(){
+  lens = new CircularShaper(Shaper.SEAT);
+  lens2 = new QuadraticShaper(Shaper.SEAT);
+  blend = new BlendShaper(lens);
+}
+
+void draw(){
+  background(255);
+  
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, blend.shape( i )*height );
+  endShape();
+}
+
+void mouseMoved(){
+  float transition = norm( mouseX, 0, width );
+  float mix = norm( mouseY, height, 0 );
+  lens.setTransitionPoint( transition );
+  blend.setBlend( mix );
+}
+
+void mousePressed(){
+  if( blend.getShaperOne() == lens )
+    blend.setShaperOne( lens2 );
+  else
+    blend.setShaperOne( lens );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setShaperOne(shaper)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>shaper</dt>
+					<dd>The shaper to use as the first shaper in the blender<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_blend_getshaperone.html">getShaperOne()</a><br />
+				<a href="shaper_blend_setshapertwo.html">setShaperTwo()</a><br />
+				<a href="shaper_blend.html">BlendShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

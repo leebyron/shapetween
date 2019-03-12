@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ tick()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::tick()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				Advances the tween by one 'tick' which is defined by the duration of the tween. This function is usually called automatically,
+				however when using <strong>Tween</strong> in an advanced way, by passing null the first attribute in it's constructor, you must
+				explicitly call <strong>tick()</strong> at every frame. This is specifically useful for animation within seperate threads.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(null, 2);
+  ani.start();
+}
+
+void draw(){
+  background(255);
+  ani.tick();
+  ellipse(ani.time()*width, ani.position()*width, 4, 4);
+}
+</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				tick()</code></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_time.html">time()</a><br>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

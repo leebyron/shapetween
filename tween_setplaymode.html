@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ setPlayMode()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::setPlayMode()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				Sets the current mode of play, using combinations of repeat and reversing.<br>
+				Tween.ONCE plays the tween from 0 to 1, once.<br>
+				Tween.REPEAT plays the tween from 0 to 1, and repeats until stopped.<br>
+				Tween.REVERSE_ONCE plays the tween from 0 to 1, and then from 1 to 0.<br>
+				Tween.REVERSE_REPEAT plays the tween from 0 to 1, back to 0 and then repeats.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(this, 2);
+  ani.setPlayMode( Tween.REVERSE_REPEAT );
+  ani.start();
+}
+
+void draw(){
+  background(255);
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void mousePressed(){
+  ani.setPlayMode( Tween.ONCE );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setPlayMode(mode)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>mode</dt>
+					<dd>int: Tween.ONCE (default), Tween.REPEAT, Tween.REVERSE_ONCE or Tween.REVERSE_REPEAT </dd>
+				</dl>
+			</dd>
+
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_repeat.html">repeat()</a><br>
+				<a href="tween_noRepeat.html">noRepeat()</a><br>
+				<a href="tween_playcount.html">playCount()</a><br>
+				<a href="tween_setEasing.html">setEasing()</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

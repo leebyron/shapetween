@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Shaper
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				This abstract class represents a shaper function, with one main method: <strong>shape()</strong>. The class
+				also contains a list of constants that represent the built in shaper functions, which can be used to specify
+				a shaper in Tween's <strong>setEasing()</strong>.<br><br>
+				Shaper by default does not guarantee that shaped numbers will be between 0 and 1, in order to allow for interesting
+				spacial animation. If you are working in a domain other than spacial animation, use <strong>clamp()</strong> to limit
+				the output of <strong>shape()</strong>.</dd>
+				
+			<dt>Example</dt>
+			<dd>
+<pre>import megamu.shapetween.*;
+
+Shaper cosine = new CosineShaper();
+
+beginShape();
+for( float i=0; i<=1; i+= 0.05 )
+  vertex( i*width, cosine.shape( i )*height );
+endShape();</pre></dd>
+
+			<dt>Constants</dt>
+			<dd>
+				<dl class="list">
+					<dt><a href="shaper_linear.html">LINEAR</a></dt>
+					<dd>Shaper which is a direct map between input and output</dd>
+					
+					<dt><a href="shaper_cosine.html">COSINE</a></dt>
+					<dd>Shaper which is an inverted partial cosine function</dd>
+										
+					<dt><a href="shaper_quadratic.html">QUADRATIC</a></dt>
+					<dd>Shaper which is a simple quadratic function</dd>
+					
+					<dt><a href="shaper_circular.html">CIRCULAR</a></dt>
+					<dd>Shaper which is a circular arc</dd>
+					
+					<dt><a href="shaper_bezier.html">BEZIER</a></dt>
+					<dd>Shaper which is a bezier curve</dd>
+					
+					<dt><a href="shaper_back.html">BACK</a></dt>
+					<dd>Shaper which is a cubic curve modified to have anticipation</dd>
+					
+					<dt><a href="shaper_bounce.html">BOUNCE</a></dt>
+					<dd>Shaper which emulates a bouncing motion</dd>
+				</dl>
+			</dd>
+
+			<dt>Methods</dt>
+			<dd>
+				<dl class="list">
+					<dt><a href="shaper_shape.html">shape()</a></dt>
+					<dd>Shapes a normalized number</dd>
+					
+					<dt><a href="shaper_slope.html">slope()</a></dt>
+					<dd>The slope of the shape at this point</dd>
+					
+					<dt><a href="shaper_secondslope.html">secondSlope()</a></dt>
+					<dd>The second derivative of the shape at this point</dd>
+					
+					<dt><a href="shaper_setmode.html">setMode()</a></dt>
+					<dd>Alters the easing mode of the shape, such as SIGMOID or SEAT</dd>
+
+					<dt><a href="shaper_settransitionpoint.html">setTransitionPoint()</a></dt>
+					<dd>When shaping with SIGMOID or SEAT, sets the point at which the transition occurs</dd>
+										
+					<dt><a href="shaper_clamp.html">clamp()</a></dt>
+					<dd>Requires that <strong>shape()</strong> return between 0 and 1</dd>
+					
+					<dt><a href="shaper_noclamp.html">noClamp()</a></dt>
+					<dd>Allows for <strong>shape()</strong> to return numbers below 0 and above 1</dd>
+
+				</dl>
+			</dd>
+
+			<dt>Custom Shaper</dt>
+			<dd>The shaper class is abstract and intended to be extended in order to create custom shape functions.
+				These extended shape functions can then be passed to Tween constructors, or <strong>setEasing()</strong>
+				to set the easing for these tweens. The extended class must implement the <strong>f(x)</strong> method
+				as shown below.<br><br>
+
+<pre>public class SquareShaper extends Shaper{
+
+  public float f( float x ){
+    return x*x;
+  }
+
+}</pre><br>
+
+				In order to use the custom shape function with the Tween, pass in an instance of the
+				custom class to <strong>setEasing()</strong>.<br><br>
+				
+<pre>import megamu.shapetween.*
+
+Tween ani;
+void setup(){
+  shape = new SquareShaper();
+  ani = new Tween(this, 2);
+  ani.setEasing( shape );
+}
+
+void draw(){
+  background(255);
+  ellipse(ani.time()*width, ani.position()*width, 4, 4);
+}
+
+void mousePressed(){
+  ani.setShape( new OtherCustomShaper() );
+}</pre>
+			</dd>
+						
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_blend.html">BlendShaper</a><br>
+				<a href="tween.html">Tween</a><br>
+				<a href="tween_setEasing.html">setEasing()</a><br>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

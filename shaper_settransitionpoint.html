@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ setTransitionPoint()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper::setTransitionPoint()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets the transition point when in SIGMOID or SEAT modes in order to bias the shape transition towards one side or the other.<br /><br />
+			Setting x and y as seperate values creates a skewed transition, which will create a non-continuous derivative in the shape for
+			shapers which do not end with a horizontal or vertical slope (ie CircularShaper).</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Shaper circle;
+
+void setup(){
+  circle = new CircularShaper();
+  circle.setEasingMode( Shaper.SEAT );
+}
+
+void draw(){
+  background(255);
+  
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, circle.shape( i )*height );
+  endShape();
+}
+
+void mouseMoved(){
+  circle.setTransitionPoint( norm(mouseX,0,width) , norm(mouseY,0,height) );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setTransitionPoint(x)<br />
+				setTransitionPoint(x,y)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>x</dt>
+					<dd>Sets the transition point in the x dimension<br />
+					
+					<dt>y</dt>
+					<dd>Only set y if it's different from x. This transforms the f(x) dimension to create a skewed transition<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_setmode.html">setMode()</a><br />
+				<a href="shaper_shape.html">shape()</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

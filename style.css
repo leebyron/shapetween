@@ -1,0 +1,199 @@
+body{
+	min-width: 740px;
+	font-family: Helvetica, "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	color: #444444;
+}
+
+img{
+	border: solid 3px;
+	border-color: #EEEEEE;
+	margin: 0.5em;
+}
+a:hover img{
+	border-color: #999999;
+}
+
+img.left{
+	color: white;
+	float: left;
+	margin: 0em;
+	margin-top: 0.25em;
+	margin-right: 0.5em;
+}
+
+img.right{
+	float: left;
+	margin: 0em;
+	margin-top: 0.25em;
+	margin-left: 0.5em;
+}
+
+.back{
+	position: absolute;
+	width: 50px;
+	text-align: right;
+	font-size: 24px;
+	color: #AAAAAA;
+	float: left;
+	top: 25px;
+}
+
+.crumbs{
+	font-size: 14px;
+	color: #AAAAAA;
+	margin-left: 45px;
+	margin-bottom: 1.5em;
+}
+
+.nav a{
+	color: #AAAAAA;
+	text-decoration: none;
+	padding: 2px 5px 2px 5px;
+	font-weight: bold;
+}
+
+.nav a:hover{
+	color: #999999;
+	background-color: #EEEEEE;
+	text-decoration: underline;
+}
+
+.back a:hover{
+	text-decoration: none;
+}
+
+.title{
+	font-size: 24px;
+	margin-left: 50px;
+}
+
+.author a{
+	color: #444444;
+	text-decoration: none;
+}
+.author a:hover{
+	background-color: #EEEEEE;
+	color: #444444;
+}
+
+a{
+	color: #3aaabb;
+}
+a:hover{
+	background-color: #3aaabb;
+	color: white;
+	text-decoration: none;
+}
+
+h4{
+	font-size: 13px;
+	margin: 0px;
+	margin-bottom: 0em;
+}
+
+h5{
+	font-size: 12px;
+	font-style: italic;
+	font-weight: normal;
+	margin: 0pc;
+	margin-top: 0.5em;
+}
+
+.column{
+	width: 330px;
+	float: left;
+	margin-left: 50px;
+}
+
+.column p{
+	margin-bottom: 1.5em;
+}
+
+.column[class~=one]{
+	margin-left: 50px;
+}
+
+.column[class~=two]{
+	margin-left: 30px;
+}
+
+.column[class~=full]{
+	margin-top: 1em;
+	width: 690px;
+	clear: both;
+}
+
+dl.list{
+	margin: 0px;
+}
+
+pre{
+	margin: 0px;
+}
+
+pre, code{
+	font-size: 12px;
+	font-family: Courier, sans-serif;
+	color: #555555;
+}
+
+dl.column dt{
+	display: block;
+	clear: both;
+	float: left;
+	width: 110px;
+}
+
+dl.column dd{
+	margin: 0px;
+	display: block;
+	float: left;
+	width: 580px;
+	margin-bottom: 1.5em;
+}
+
+dl.list dd{
+	width: 470px;
+}
+
+.footer{
+	clear: both;
+	background-color: #EEEEEE;
+	padding: 5px;
+	padding-left: 50px;
+}
+
+.example{
+	margin-top: 1.5em;
+}
+
+.example .applet{
+	float: left;
+	margin-left: 50px;
+	margin-bottom: 1.5em;
+	border: solid 3px #EEEEEE;
+}
+
+.example .description{
+	float: left;
+	margin-left: 20px;
+	width: 470px;
+}
+
+.description span{
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+
+.example .code{
+	clear: both;
+	margin-left: 50px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	width: 690px;
+}

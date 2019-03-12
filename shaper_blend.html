@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			BlendShaper
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				This class takes two Shaper functions and blends them based on a number between 0 and 1.
+				This is useful for creating hybrid shapes, as well as smoothing out other shapes. In practice
+				this is often used for creating less sharp SEAT shapes, for use in zooming.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Shaper cosine;
+BlendShaper blend;
+
+void setup(){
+  cosine = new CosineShaper( Shaper.SEAT );
+  blend = new BlendShaper( cosine );
+}
+
+void draw(){
+  beginShape();
+  for( float i=0; i<=1; i += 0.05 )
+    vertex( i*width, height - blend.shape( i )*height );
+  vertex( width, 0);
+  endShape();
+}
+
+void mouseMoved(){
+  float y = norm(mouseY, 0, height);
+  blend.setBlend(y);
+}</pre></dd>
+			
+			<dt>Constructor</dt>
+			<dd><code>
+				BlendShaper( shaperOne )<br>
+				BlendShaper( shaperOne, shaperTwo )<br>
+				BlendShaper( shaperOne, blend )<br>
+				BlendShaper( shaperOne, shaperTwo, blend )</code></dd>
+			
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shaperOne</dt>
+					<dd>Shaper: The first shaper to blend.</dd>
+					
+					<dt>shaperTwo</dt>
+					<dd>Shaper: The second shaper to blend. If this is not specified a LinearShaper is used.</dd>
+					
+					<dt>blend</dt>
+					<dd>float: A number between 0 and 1 which interpolates between the two shapers. Default is 0.5.</dd>
+				</dl>
+			</dd>
+			
+			<dt>Methods</dt>
+			<dd>
+				<dl class="list">
+					<!-- Basic Variables -->
+					<dt><a href="shaper_blend_setblend.html">setBlend()</a></dt>
+					<dd>Sets the proportion of the two Shapers</dd>
+					
+					<dt><a href="shaper_blend_getblend.html">getBlend()</a></dt>
+					<dd>Gets the current proportion of the two Shapers</dd>
+										
+					<dt><a href="shaper_blend_setshaperone.html">setShaperOne()</a></dt>
+					<dd>Sets the first Shaper</dd>
+					
+					<dt><a href="shaper_blend_setshapertwo.html">setShaperTwo()</a></dt>
+					<dd>Sets the second Shaper</dd>
+					
+					<dt><a href="shaper_blend_getshaperone.html">getShaperOne()</a></dt>
+					<dd>Returns the first Shaper</dd>
+					
+					<dt><a href="shaper_blend_getshapertwo.html">getShaperTwo()</a></dt>
+					<dd>Returns the second Shaper</dd>
+				</dl>
+			</dd>
+			
+			<dt>Public Variables</dt>
+			<dd>
+				<dl class="list">
+					<!-- Advanced use -->
+					<dt><a href="tween_timescale.html">blend</a></dt>
+					<dd>Modifys the interpolation between the two Shapers</dd>
+				</dl>
+			</dd>
+
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper.html">Shaper</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

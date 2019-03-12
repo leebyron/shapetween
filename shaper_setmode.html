@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ setMode()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper::setMode()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Alters the mode of the shaper. Examples of easing modes are ease in, ease out, sigmoid and seat.
+			This function takes IN, OUT, SIGMOID and SEAT to satisfy these modes, respectively. SIGMOID is another way of referring to IN_OUT.
+			SEAT is another way of referring to OUT_IN.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Shaper cosine = new CosineShaper();
+cosine.setMode( Shaper.SEAT );
+
+beginShape();
+for( float i=0; i<=1; i+= 0.05 )
+  vertex( i*width, cosine.shape( i )*height );
+endShape();</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setMode(mode)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>mode</dt>
+					<dd>Sets the shape mode,<br /> Shaper.IN, Shaper.OUT, Shaper.SIGMOID, Shaper.SEAT<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_settransitionpoint.html">setTransitionPoint()</a><br />
+				<a href="shaper_shape.html">shape()</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

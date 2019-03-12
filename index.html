@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+		</div>
+		
+		<div class="title">
+			Animation &amp; Shaping
+		</div>
+		
+		<div class="column one">
+			<p class="author">
+				<a href="javascript:noSpam('com','leebyron','lee');">Lee Byron</a>
+				&amp; <a href="javascript:noSpam('com','flong','golan');">Golan Levin</a>
+			</p>
+			
+			<p>
+				<strong>Shapetween</strong> is a library for Processing that provides an easy way
+				of animating elements within a sketch in a variety of ways.
+			</p>
+
+			<p>
+				<h4>Download &amp; Install</h4>
+				<a href="downloads/shapetween.zip">shapetween.zip</a><br />
+				Unzip into the Processing “libraries” folder<br />
+				Sketch &rarr; Import Library &rarr; shapetween<br />
+			</p>
+
+			<p>
+				The Animation &amp; Shaping library <em>shapetween</em> provides the ability to create
+				basic time based Tween animations, shape them using many of the built in
+				shaping functions and modify them on the fly. In addition to this, the
+				library also opens access to all of the shape functions for other uses,
+				such as data shaping (ie log scaling).
+			</p>
+			
+			<p>
+				<h4>What is a Tween?</h4>
+				Tween is short for <em>between</em>, and used to describe an animation that occurs by
+				interpolating the state of an animation <em>between</em> two defined states.
+				This differs from traditional cell animation, where every frame is defined.			
+			</p>
+			<p>
+				Recommended reading on Computational Tweens (based in Actionscript) from
+				<a href="http://www.robertpenner.com/easing/penner_chapter7_tweening.pdf" target="_blank">Chapter 7</a>
+				of Robert Penner's book: <em>Programming Macromedia Flash MX</em>. This library is influenced by
+				his description of code based tween animation.
+			</p>
+			
+			<p>
+				<h4>What is a Shape Function?</h4>
+				A shape function is a mathematical function used to transform or <em>shape</em> data.
+				Provided a number between 0 and 1, a shape function will return a number usually between 0 and 1 corresponding
+				to the shape of that function.
+			</p>
+			
+			<p>
+				<a href="example_shapecurve.html"><img class="left" src="images/shape.png" style="float:left;"></a>
+				In this image, the SIN_OUT function shapes input numbers along a piece of a sin function,
+				condensing the data towards the far end of the spectrum, in an animation, this would ease out.
+			</p>
+			
+			<p>
+				<h4>Why Tween and Shaper in the same library?</h4>
+				Tweens can highly benefit from shaper functions in order to create an effect called Easing.
+				Easing takes a Tween and passes it through a shaper function before applying it to the animation,
+				which can create much more realistic animations.
+			</p>
+			
+			<p>
+				Easing is essentially the transition between moving and not moving, allowing for a gradual acceleration
+				into and out of motion.
+			</p>
+		</div>
+		
+		<div class="column two">
+			<p>
+				<h4>Tween Class</h4>
+				<a href="tween.html">Tween</a><br />
+				<h5>Basic variables</h5>
+				<a href="tween_time.html">time()</a><br />
+				<a href="tween_position.html">position()</a><br />
+				<a href="tween_istweening.html">isTweening()</a><br />
+				<h5>Playhead control</h5>
+				<a href="tween_start.html">start()</a><br />
+				<a href="tween_end.html">end()</a><br />
+				<a href="tween_pause.html">pause()</a><br />
+				<a href="tween_resume.html">resume()</a><br />
+				<a href="tween_reverse.html">reverse()</a><br />
+				<a href="tween_seek.html">seek()</a><br />
+				<h5>Modifying the Tween</h5>
+				<a href="tween_setduration.html">setDuration()</a><br />
+				<a href="tween_seteasing.html">setEasing()</a><br />
+				<a href="tween_seteasingmode.html">setEasingMode()</a><br />
+				<a href="tween_noeasing.html">noEasing()</a><br />
+				<a href="tween_setplaymode.html">setPlayMode()</a><br />
+				<a href="tween_repeat.html">repeat()</a><br />
+				<a href="tween_norepeat.html">noRepeat()</a><br />
+				<h5>Advanced use</h5>
+				<a href="tween_geteasing.html">getEasing()</a><br />
+				<a href="tween_playcount.html">playCount()</a><br />
+				<a href="tween_speed.html">speed()</a><br />
+				<a href="tween_force.html">force()</a><br />
+				<a href="tween_tick.html">tick()</a><br />
+				<a href="tween_timescale.html">timeScale</a><br />
+			</p>
+			
+			<p>
+				<h4>Shaper Class</h4>
+				<a href="shaper.html">Shaper</a><br />
+				<a href="shaper_shape.html">shape()</a><br />
+				<a href="shaper_slope.html">slope()</a><br />
+				<a href="shaper_secondslope.html">secondSlope()</a><br />
+				<a href="shaper_setmode.html">setMode()</a><br />
+				<a href="shaper_settransitionpoint.html">setTransitionPoint()</a><br />
+				<a href="shaper_clamp.html">clamp()</a><br />
+				<a href="shaper_noclamp.html">noClamp()</a><br />
+			</p>
+			
+			<p>
+				<h4>Shape Functions (Under Construction)</h4>
+				<a href="shaper_blend.html">BlendShaper</a><br />
+				<a href="shaper_linear.html">LinearShaper</a><br />
+				<a href="shaper_cosine.html">CosineShaper</a><br />
+				<a href="shaper_quadratic.html">QuadraticShaper</a><br />
+				<a href="shaper_circular.html">CircularShaper</a><br />
+				<a href="shaper_bezier.html">BezierShaper</a><br />
+				<a href="shaper_back.html">BackShaper</a><br />
+				<a href="shaper_bounce.html">BounceShaper</a><br />
+			</p>
+			
+			<p>
+				<h4>Example Code (Under Construction)</h4>
+				<a href="example_shapecurve.html">Shape Curve</a><br />
+				<a href="example_basictween.html">Basic Tween</a><br />
+				<a href="example_colortween.html">Color Tween</a><br />
+				<a href="#">Following a Path</a><br />
+				<a href="#">Zoom Lens</a><br />
+				<h5>Animation Techniques</h5>
+				<a href="example_easinginout.html">Easing In & Out</a><br />
+				<a href="#">Cell Animation</a><br />
+				<a href="#">Anticipation</a><br />
+				<a href="#">Squash & Stretch</a>
+			</p>
+		</div>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+		
+	</body>
+</html>

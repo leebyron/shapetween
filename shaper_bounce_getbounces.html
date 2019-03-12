@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BounceShaper \ getBounces()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_bounce.html">BounceShaper</a>
+		</div>
+		
+		<div class="title">
+			BounceShaper::getBounces()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Returns the number of bounces this shaper is currently modeling.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BounceShaper bounce;
+Tween ball;
+
+void setup(){
+  size(200,200);
+  ball = new Tween(this, 1);
+  ball.setPlayMode( Tween.REPEAT );
+  bounce = new BounceShaper();
+  ball.setEasing(bounce);
+}
+
+void draw(){
+  background(255);
+  
+  for( int i=50; i<150; i++ )
+    point( i, 50 + bounce.shape( norm(i,50,150) )*100 );
+  
+  ellipse( 100, lerp(30, 190, ball.position()), 20, 20 );
+}
+
+void mousePressed(){
+  bounce.setBounces( (bounce.getBounces()+1) % 8 );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				getBounces()</code></dd>
+							
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_bounce_setbounces.html">setBounces()</a><br />
+				<a href="shaper_bounce.html">BounceShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

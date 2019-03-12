@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Basic Tween</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Example: Basic Tween
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Basic_Tween" archive="examples/Basic_Tween.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>Tweens the circle from one coordinate to another, by way of Processing's
+				<strong><a href="http://processing.org/reference/lerp_.html" target="_blank">lerp()</a></strong> function.
+				The tween's <strong>position()</strong> is used as the <em>amt</em> parameter, which works particularly nicely
+				since it is usually between 0 and 1.</p>
+				<p>This is the prototypical tween, showing how an animation can be computationally created where every frame is a
+				linear interpolation between the two defined states (or keyframes) by a tween position which changes over time.</p>
+			</div>
+		
+			<div class="code">
+<pre>import megamu.shapetween.*;
+
+Tween ani;
+
+void setup(){
+  size( 200, 200 );
+  ani = new Tween(this, 2, Tween.SECONDS);
+  ani.start();
+}
+
+void draw(){
+  background( 255 );
+  
+  float x1 = 20;
+  float y1 = 30;
+  
+  float x2 = 180;
+  float y2 = 190;
+  
+  float x = lerp( x1, x2, ani.position() );
+  float y = lerp( y1, y2, ani.position() );
+  
+  fill(0);
+  ellipse( x, y, 8, 8 );
+}
+
+void mousePressed(){
+  ani.start();
+}</pre>
+			</div>
+		
+		</div>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

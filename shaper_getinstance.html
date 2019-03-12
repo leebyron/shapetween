@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ getInstance()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper.getInstance()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				This static method returns an instance of one of the built in shape classes, ie Shaper.COSINE.
+				See <strong>Shaper</strong> for a list of available shapes.
+				This is a recommended method of getting access to a Shaper when shaping a large amount of data
+				due to the fact that Shaper's static <strong>shape()</strong> method creates a new instance
+				of the Shaper class on each call, creating a significant performance hit. Shapers with random
+				elements initalize on construction, requiring this method over the static <strong>shape()</strong> method.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Shaper s = Shaper.getInstance( Shaper.COSINE );
+
+beginShape();
+for( float i=0; i<=1; i+= 0.05 )
+  vertex( i*width, s.shape( i )*height );
+endShape();</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				getInstance(shape)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shape</dt>
+					<dd>One of the built in shape classes, ie Shaper.COSINE</dd>
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_shape.html">shape()</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

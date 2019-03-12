@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Easing In & Out</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Example: Easing In & Out
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="EasingInOut" archive="examples/EasingInOut.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>Tweens the circle from one coordinate to another, by way of Processing's
+				<strong><a href="http://processing.org/reference/lerp_.html" target="_blank">lerp()</a></strong> function.
+				The tween's <strong>position()</strong> is used as the <em>amt</em> parameter, which works particularly nicely
+				since it is usually between 0 and 1.</p>
+				<p>In this example, two ellipses are being tween, one using the Tween <strong>time()</strong> method while
+				the second uses the <strong>position()</strong> method. A Tween's time always moves linearly, whereas it's
+				position is based on the easing shape function used. In this case, the Shaper.COSINE function. The easing
+				in and out creates a more natural looking animation.</p>
+			</div>
+		
+			<div class="code">
+<pre>import megamu.shapetween.*;
+
+Tween ani;
+
+void setup(){
+  size( 200, 200 );
+  ani = new Tween(this, 2, Tween.SECONDS, Tween.REVERSE_REPEAT, Shaper.COSINE);
+  ani.start();
+}
+
+void draw(){
+  background( 255 );
+  
+  float x1 = 30;
+  float x2 = 170;
+
+  float xT = lerp( x1, x2, ani.time() );
+  float xP = lerp( x1, x2, ani.position() );
+  
+  noStroke();
+  
+  fill(0);
+  ellipse( xT, 60, 30, 30 );
+  
+  fill(0, 100, 180);
+  ellipse( xP, 140, 30, 30 );
+}</pre>
+			</div>
+		
+		</div>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

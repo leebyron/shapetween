@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Tween
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				This class creates a basic tween, which automatically tracks
+				a number from 0 to 1 over time. A Tweened number can be used within
+				Processing to control an animation between two states. A Tween is
+				given a time duration in seconds or frames, and optionally an easing
+				function.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(this, 2, Tween.SECONDS, Shaper.COSINE);
+}
+
+void draw(){
+  background(255);
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}</pre></dd>
+			
+			<dt>Constructor</dt>
+			<dd><code>
+				Tween( parent, duration )<br>
+				Tween( parent, duration, durationType )<br>
+				Tween( parent, duration, durationType, easing )</code></dd>
+			
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>parent</dt>
+					<dd>PApplet: typically use "this"</dd>
+					
+					<dt>duration</dt>
+					<dd>float: tween duration in seconds unless you've set durationType to FRAMES</dd>
+					
+					<dt>durationType</dt>
+					<dd>boolean: Tween.SECONDS or Tween.FRAMES (smoother)</dd>
+					
+					<dt>easing</dt>
+					<dd>Shaper function used for animation easing. See <strong>setEasing()</strong> for details.</dd>
+				</dl>
+			</dd>
+			
+			<dt>Methods</dt>
+			<dd>
+				<dl class="list">
+					<!-- Basic Variables -->
+					<dt><a href="tween_time.html">time()</a></dt>
+					<dd>Returns the current time</dd>
+					
+					<dt><a href="tween_position.html">position()</a></dt>
+					<dd>Returns the current shaped position</dd>
+					
+					<dt><a href="tween_istweening.html">isTweening()</a></dt>
+					<dd>Returns true if the tween is playing</dd>
+					
+					<!-- Playhead control -->
+					<dt><a href="tween_start.html">start()</a></dt>
+					<dd>Begins a tween from 0</dd>
+					
+					<dt><a href="tween_end.html">end()</a></dt>
+					<dd>Forces the end of the tween, setting time to 1</dd>
+					
+					<dt><a href="tween_pause.html">pause()</a></dt>
+					<dd>Haults playing</dd>
+					
+					<dt><a href="tween_resume.html">resume()</a></dt>
+					<dd>Resumes playing</dd>
+					
+					<dt><a href="tween_reverse.html">reverse()</a></dt>
+					<dd>Causes the tween to reverse direction</dd>
+
+					<dt><a href="tween_seek.html">seek()</a></dt>
+					<dd>Seeks to a specific time</dd>
+					
+					<!-- Modifying the Tween -->
+					<dt><a href="tween_setduration.html">setDuration()</a></dt>
+					<dd>Sets the duration of this tween</dd>
+					
+					<dt><a href="tween_seteasing.html">setEasing()</a></dt>
+					<dd>Sets the current easing shape function</dd>
+
+					<dt><a href="tween_seteasingmode.html">setEasingMode()</a></dt>
+					<dd>Sets the current easing mode, such as ease in or ease out</dd>
+					
+					<dt><a href="tween_noeasing.html">noEasing()</a></dt>
+					<dd>Removes any easing shape function</dd>
+					
+					<dt><a href="tween_setplaymode.html">setPlayMode()</a></dt>
+					<dd>Sets the play mode</dd>
+
+					<dt><a href="tween_repeat.html">repeat()</a></dt>
+					<dd>Causes the tween to repeat playing after it ends</dd>
+
+					<dt><a href="tween_norepeat.html">noRepeat()</a></dt>
+					<dd>Turns off repeating for a tween</dd>
+					
+					<!-- Advanced use -->
+					<dt><a href="tween_geteasing.html">getEasing()</a></dt>
+					<dd>Returns the current easing shape function</dd>
+					
+					<dt><a href="tween_playcount.html">playCount()</a></dt>
+					<dd>Returns the number of plays since start if set to repeat</dd>
+
+					<dt><a href="tween_speed.html">speed()</a></dt>
+					<dd>Returns the relative speed of this Tween</dd>
+					
+					<dt><a href="tween_speed.html">force()</a></dt>
+					<dd>Returns the relative force of this Tween</dd>
+					
+					<dt><a href="tween_tick.html">tick()</a></dt>
+					<dd>Advances the tween one step, advanced use</dd>
+				</dl>
+			</dd>
+			
+			<dt>Public Variables</dt>
+			<dd>
+				<dl class="list">
+					<!-- Advanced use -->
+					<dt><a href="tween_timescale.html">timeScale</a></dt>
+					<dd>Modifys the speed at which all tweens move</dd>
+				</dl>
+			</dd>
+
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper.html">Shaper</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

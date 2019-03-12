@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ timeScale</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween.timeScale
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>A static global modifier for the speed at which all Tweens take place. It defaults to 1, which does not affect any Tween speed.
+			If it is set to a number greater than 1, it acts as fast-forward. Setting to a number less than 1 acts as a slow motion.
+			This is particularly useful as a debugging tool, allowing you to watch animations take place in fine detail, or speeding through
+			animations you are not interested in.<br /><br />Note that this alters Tween speed globally, for all Tweens. If you want to alter the speed
+			of a particular Tween, use the <strong>setDuration()</strong> method.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(null, 2);
+  ani.repeat();
+  ani.start();
+}
+
+void draw(){
+  background(255);
+  ani.tick();
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void mouseDragged(){
+  Tween.timeScale = lerp( 0.1, 3, norm(mouseX, 0, width) );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				Tween.timeScale</code></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_time.html">time()</a><br>
+				<a href="tween_setDuration.html">setDuration()</a><br>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ getEasing()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::getEasing()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Returns the Shaper currently being used as an easing function.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(this, 2);
+  ani.repeat();
+  ani.setEasing( Tween.COSINE );
+}
+
+void draw(){
+  background(255);
+  
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void mousePressed(){
+  Shaper ease = ani.getEasing();
+  ease.clamp();
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				getEasing()</code></dd>
+				
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_seteasing.html">setEasing()</a><br>
+				<a href="tween_noeasing.html">noEasing()</a><br>
+				<a href="shaper.html">Shaper</a><br>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

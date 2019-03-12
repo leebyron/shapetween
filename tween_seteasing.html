@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ setEasing()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::setEasing()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				Sets the easing shape function to the tween. The shape function that this is set to will
+				affect the number returned by <strong>position()</strong>, which is a function of
+				<strong>time()</strong>. For included shaping functions, see <strong>Shaper</strong>.
+				For more information on the easeMode, see <strong>setEasingMode()</strong></dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+Shaper cosine;
+void setup(){
+  ani = new Tween(this, 2);
+  cosine = new CosineShaper( Tween.IN );
+}
+
+void draw(){
+  background(255);
+  
+  if( playCount()%2 == 0 ) // if the play count is even
+  	ani.setEasing( cosine );
+  else
+  	ani.setEasing( "myCustomEasing" );
+  
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void myCustomEasing(float in){
+	return 1 - (1-in)*(1-in);
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setEasing(shape)<br>
+				setEasing(shape, easeMode)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shape</dt>
+					<dd>Shaper function used for animation easing</dd>
+					<dt>easeMode</dt>
+					<dd>Optionally sets the ease direction for this shape,<br /> Tween.IN, Tween.OUT, Tween.IN_OUT, Tween.OUT_IN<br />
+				</dl>
+			</dd>
+			
+			<dt>Flexibility</dt>
+			<dd>
+				The shape parameter can actually be a number of different types,
+				each of which imply a different means of setting the shape easing function.<br><br>
+				<dl class="list">
+					<dt>Class</dt>
+					<dd>Creates an instance of this class to use as Shaper. The Shaper constants.<br>
+						<code>ani.setEasing( Tween.COSINE )</code></dd>
+					
+					<dt>Shaper</dt>
+					<dd>Uses this instance of a Shaper.<br>
+						<code>ani.setEasing( new CosineShaper() )</code></dd>
+						
+					<dt>String</dt>
+					<dd>Uses this method found in the processing applet. The method should have one float parameter which will be a number between 0 and 1<br>
+<pre>ani.setEasing( "customEasing" );
+
+void customEasing( float in ){
+	return 1 - (1-in)*(1-in);
+}</pre></dd>
+				</dd>
+					
+				</dl>
+			</dd>
+
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_seteasingmode.html">setEasingMode()</a><br>
+				<a href="tween_noeasing.html">noEasing()</a><br>
+				<a href="shaper.html">Shaper</a><br>
+				<a href="tween_time.html">time()</a><br>
+				<a href="tween_position.html">position()</a><br>
+				<a href="tween_playmode.html">playMode()</a><br>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

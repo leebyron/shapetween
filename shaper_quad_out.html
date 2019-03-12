@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ QUAD_OUT</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper.QUAD_OUT
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>
+				Quadradic out creates an ease-out using a quadradic function.</dd>
+				
+			<dt>Shape</dt>
+			<dd>
+				<img src="images/shaper_quad_out.png" class="left" />
+				<pre>Shaper.shape(Shaper.QUAD_OUT, 0.000); // &rarr; 0.000
+Shaper.shape(Shaper.QUAD_OUT, 0.125); // &rarr; 0.234
+Shaper.shape(Shaper.QUAD_OUT, 0.250); // &rarr; 0.438
+Shaper.shape(Shaper.QUAD_OUT, 0.375); // &rarr; 0.609
+Shaper.shape(Shaper.QUAD_OUT, 0.500); // &rarr; 0.750
+Shaper.shape(Shaper.QUAD_OUT, 0.625); // &rarr; 0.859
+Shaper.shape(Shaper.QUAD_OUT, 0.750); // &rarr; 0.938
+Shaper.shape(Shaper.QUAD_OUT, 0.875); // &rarr; 0.984
+Shaper.shape(Shaper.QUAD_OUT, 1.000); // &rarr; 1.000</pre>
+				
+			<dt>Implementation</dt>
+			<dd>
+<pre>float shape( float in ){
+  return 1 - (1-in)*(1-in);
+}</pre></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_quad_in.html">QUAD_IN</a><br>
+				<a href="shaper_quadratic.html">QUADRATIC</a><br>
+				<a href="shaper_sin_out.html">SIN_OUT</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

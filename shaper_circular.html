@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ CircularShaper</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			CircularShaper
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Circular" archive="examples/Circular.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>CircularShaper is a function which creates a circular arc which optionally passes through a point.
+				A CircularShaper will default to IN, however it can be set to be any of the three other modes.
+				CircularShaper may be modified using <strong>throughPoint()</strong>.<br><br>
+				May be referred to as Tween.CIRCULAR for use in <strong>setEasing()</strong>.</p>
+			</div>
+			
+		</div>
+		
+		<dl class="column full">
+		
+			<dt>Constructor</dt>
+			<dd><code>
+				CircularShaper()<br>
+				CircularShaper( shapeMode )<br>
+				CircularShaper( shapeMode, transition )<br>
+				CircularShaper( shapeMode, transitionX, transitionY )</code></dd>
+			
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shapeMode</dt>
+					<dd>int: a shaping mode such as Shaper.SIGMOID</dd>
+					
+					<dt>transitionX</dt>
+					<dd>float: sets the transition point in the x dimension for SIGMOID and SEAT</dd>
+					
+					<dt>transitionY</dt>
+					<dd>float: sets the transition point in the f(x) dimension, for skewing the transition</dd>
+				</dl>
+			</dd>
+			
+			<dt>Methods</dt>
+			<dd>
+				<dl class="list">
+					<!-- Basic Variables -->
+					<dt><a href="shaper_circular_throughpoint.html">throughPoint()</a></dt>
+					<dd>Alters this circular arc to pass through this point</dd>
+				</dl>
+			</dd>
+				
+			<dt>Implementation</dt>
+			<dd>
+<pre>f(x){
+  1 - sqrt(1 - x*x);
+}</pre></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper.html">Shaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ slope()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			Shaper::slope()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Returns the slope of the shape at a point between 0 and 1. This is particularly useful for determining <strong>speed()</strong> in a Tween.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Shaper cosine;
+
+void setup(){
+  size(200,200);
+  cosine = new CosineShaper(Shaper.IN);
+}
+
+void draw(){
+  background(255);
+
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, cosine.shape( i )*height );
+  endShape();
+
+  stroke(255,0,0);
+  float x = norm( mouseX, 0, width );
+  float y = cosine.shape( x );
+  float m = cosine.slope( x );
+  println(m);
+
+  line(width*(x-1), height*(y-m), width*(x+1), height*(y+m));
+}
+</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				slope(in)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>in</dt>
+					<dd>float: A number between 0 and 1</dd>
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_shape.html">shape()</a><br />
+				<a href="shaper_secondslope.html">secondSlope()</a><br />
+				<a href="tween_speed.html">speed()</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ CircularShaper \ throughPoint()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_circular.html">CircularShaper</a>
+		</div>
+		
+		<div class="title">
+			CircularShaper::throughPoint()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets a normalized point (numbers between 0 and 1) which the circular arc of this shaper will pass through.
+			The circle will maximally be one fourth of a circle, points which would cause the arc to be larger will be clamped.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+CircularShaper circle;
+
+void setup(){
+  circle = new CircularShaper();
+  circle.throughPoint( 0.7, 0.3 );
+}
+
+void draw(){
+  background(255);
+  
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, circle.shape( i )*height );
+  endShape();
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				throughPoint(x,y)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>x</dt>
+					<dd>The point to pass through in the x dimension<br />
+					
+					<dt>y</dt>
+					<dd>The point to pass through in the f(x) dimension<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_circular.html">CircularShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ BezierShaper \ setInHandle()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+			\ <a href="shaper_bezier.html">BezierShaper</a>
+		</div>
+		
+		<div class="title">
+			BezierShaper::setInHandle()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets a normalized point (numbers between 0 and 1) which acts as the handle of the incoming point of the bezier curve.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+BezierShaper bezier;
+
+void setup(){
+  bezier = new BezierShaper();
+  bezier.setInHandle( 0.7, 0.3 );
+  bezier.setOutHandle( 0.7, 0.7 );
+}
+
+void draw(){
+  background(255);
+  
+  beginShape();
+  for( float i=0; i<=1; i+= 0.05 )
+    vertex( i*width, bezier.shape( i )*height );
+  endShape();
+}
+
+void mouseMoved(){
+  float x = norm( mouseX, 0, width );
+  float y = norm( mouseY, 0, height );
+  bezier.setInHandle( x,y );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setInHandle(x,y)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">					
+					<dt>x</dt>
+					<dd>The handle point in the x dimension<br />
+					
+					<dt>y</dt>
+					<dd>The handle point in the f(x) dimension<br />
+				</dl>
+			</dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_bezier_setouthandle.html">setOutHandle()</a><br />
+				<a href="shaper_bezier.html">BezierShaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

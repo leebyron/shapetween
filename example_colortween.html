@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Color Tween</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+		</div>
+		
+		<div class="title">
+			Example: Color Tween
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Color_Tween" archive="examples/Color_Tween.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>Tweens the color of the circle through HSB color space from one color to another, by way of Processing's
+				<strong><a href="http://processing.org/reference/lerpColor_.html" target="_blank">lerpColor()</a></strong> function.
+				The tween's <strong>position()</strong> is used as the <em>amt</em> parameter, which works particularly nicely
+				since it is usually between 0 and 1.</p>
+				<p>This is very little different from the other examples and just speaks to the fact that a Tween can really
+				animate between two states of any attribute, and not simply motion.</p>
+				<p>As a note when tweening between colors, the color space you are using, RGB or HSB, affects what the tweened
+				colors would look like. HSB tends to create interpolated colors that seem more natural whereas RGB tends to tween
+				through brown space.</p>
+			</div>
+		
+			<div class="code">
+<pre>import megamu.shapetween.*;
+
+Tween ani;
+
+void setup(){
+  size( 200, 200 );
+  colorMode( HSB );
+  smooth();
+  ani = new Tween(this, 1.3, Tween.SECONDS, Tween.REVERSE_REPEAT, Shaper.QUADRATIC);
+  ani.start();
+}
+
+void draw(){
+  background( ani.isTweening() ? 255 : 230 );
+  
+  color c1 = color(  45, 210, 240 );
+  color c2 = color( 135, 130, 195 );
+  
+  color c = lerpColor( c1, c2, ani.position() );
+  
+  noStroke();
+  fill( c );
+  ellipse( 100, 100, 140, 140 );
+}
+
+void mousePressed(){
+  if( ani.isTweening() )
+    ani.pause();
+  else
+    ani.resume();
+}</pre>
+			</div>
+		
+		</div>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Tween \ setDuration()</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="tween.html">Tween</a>
+		</div>
+		
+		<div class="title">
+			Tween::setDuration()
+		</div>
+		
+		<dl class="column full">
+			<dt>Description</dt>
+			<dd>Sets the duration that a Tween will take to go from start to end.</dd>
+				
+			<dt>Example</dt>
+			<dd><pre>import megamu.shapetween.*;
+
+Tween ani;
+void setup(){
+  ani = new Tween(this, 2.5);
+}
+
+void draw(){
+  background(255);
+  
+  ellipse(ani.time()*width, ani.position()*height, 4, 4);
+}
+
+void mousePressed(){
+  ani.setDuration( 30, Tween.FRAMES );
+}
+
+void mouseReleased(){
+  ani.setDuration( 2.5, Tween.SECONDS );
+}</pre></dd>
+			
+			<dt>Syntax</dt>
+			<dd><code>
+				setDuration(duration)<br>
+				setDuration(duration, durationType)</code></dd>
+				
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>duration</dt>
+					<dd>float: tween duration in seconds unless you've set durationType to FRAMES</dd>
+					
+					<dt>durationType</dt>
+					<dd>boolean: Tween.SECONDS or Tween.FRAMES (smoother)</dd>
+				</dl>
+			</dd>
+
+			<dt>Related</dt>
+			<dd>
+				<a href="tween_noeasing.html">noEasing()</a><br>
+				<a href="shaper.html">Shaper</a><br>
+				<a href="tween_time.html">time()</a><br>
+				<a href="tween_position.html">position()</a><br>
+				<a href="tween_playmode.html">playMode()</a><br>
+				<a href="tween_playcount.html">playCount()</a>
+			</dd>
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>

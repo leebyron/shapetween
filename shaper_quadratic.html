@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Animation &amp; Shaping - Processing Library \ Shaper \ QuadraticShaper</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function noSpam(tld, domain, who){
+				document.location = "mailto:"+who+"@"+domain+"."+tld;
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
+		
+		<div class="nav crumbs">
+			<a href="http://www.megamu.com">megamu.com</a>
+			\ <a href=".">Animation &amp; Shaping</a>
+			\ <a href="shaper.html">Shaper</a>
+		</div>
+		
+		<div class="title">
+			QuadraticShaper
+		</div>
+		
+		<div class="example">
+		
+			<div class="applet">
+				<applet code="Quadratic" archive="examples/Quadratic.jar" width="200" height="200"></applet></div>
+			
+			<div class="description">
+				<p>QuadraticShaper is a basic quadratic or "square" function. A QuadraticShaper will default to IN_OUT, or SIGMOID,
+				however it can be set to be any of the three other modes. QuadraticShaper otherwise does not have any modifiers.<br><br>
+				May be referred to as Tween.COSINE for use in <strong>setEasing()</strong>.</p>
+			</div>
+			
+		</div>
+		
+		<dl class="column full">
+		
+			<dt>Constructor</dt>
+			<dd><code>
+				QuadraticShaper()<br>
+				QuadraticShaper( shapeMode )<br>
+				QuadraticShaper( shapeMode, transition )<br>
+				QuadraticShaper( shapeMode, transitionX, transitionY )</code></dd>
+			
+			<dt>Parameters</dt>
+			<dd>
+				<dl class="list">
+					<dt>shapeMode</dt>
+					<dd>int: a shaping mode such as Shaper.SIGMOID</dd>
+					
+					<dt>transitionX</dt>
+					<dd>float: sets the transition point in the x dimension for SIGMOID and SEAT</dd>
+					
+					<dt>transitionY</dt>
+					<dd>float: sets the transition point in the f(x) dimension, for skewing the transition</dd>
+				</dl>
+			</dd>
+				
+			<dt>Implementation</dt>
+			<dd>
+<pre>f(x){
+  x*x;
+}</pre></dd>
+			
+			<dt>Related</dt>
+			<dd>
+				<a href="shaper_bounce.html">BounceShaper</a>
+				<a href="shaper.html">Shaper</a>
+			</dd>
+			
+		</dl>
+		
+		<div class="footer">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
+			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
+		</div>
+
+	</body>
+</html>
