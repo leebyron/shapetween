@@ -11,26 +11,31 @@
 		</script>
 	</head>
 	<body>
-	
+
 		<div class="nav back"><a href="javascript:history.back();">&larr;</a></div>
-		
+
 		<div class="nav crumbs">
 			<a href="https://leebyron.com">leebyron.com</a>
 		</div>
-		
+
 		<div class="title">
 			Animation &amp; Shaping
 		</div>
-		
+
 		<div class="column one">
 			<p class="author">
 				<a href="javascript:noSpam('com','leebyron','lee');">Lee Byron</a>
 				&amp; <a href="javascript:noSpam('com','flong','golan');">Golan Levin</a>
 			</p>
-			
+
 			<p>
 				<strong>Shapetween</strong> is a library for Processing that provides an easy way
 				of animating elements within a sketch in a variety of ways.
+			</p>
+
+			<p>
+				<h4>Source</h4>
+				Find source, examples, and this documentation on <a href="https://github.com/leebyron/shapetween">Github</a>.
 			</p>
 
 			<p>
@@ -47,12 +52,12 @@
 				library also opens access to all of the shape functions for other uses,
 				such as data shaping (ie log scaling).
 			</p>
-			
+
 			<p>
 				<h4>What is a Tween?</h4>
 				Tween is short for <em>between</em>, and used to describe an animation that occurs by
 				interpolating the state of an animation <em>between</em> two defined states.
-				This differs from traditional cell animation, where every frame is defined.			
+				This differs from traditional cell animation, where every frame is defined.
 			</p>
 			<p>
 				Recommended reading on Computational Tweens (based in Actionscript) from
@@ -60,33 +65,33 @@
 				of Robert Penner's book: <em>Programming Macromedia Flash MX</em>. This library is influenced by
 				his description of code based tween animation.
 			</p>
-			
+
 			<p>
 				<h4>What is a Shape Function?</h4>
 				A shape function is a mathematical function used to transform or <em>shape</em> data.
 				Provided a number between 0 and 1, a shape function will return a number usually between 0 and 1 corresponding
 				to the shape of that function.
 			</p>
-			
+
 			<p>
 				<a href="example_shapecurve.html"><img class="left" src="images/shape.png" style="float:left;"></a>
 				In this image, the SIN_OUT function shapes input numbers along a piece of a sin function,
 				condensing the data towards the far end of the spectrum, in an animation, this would ease out.
 			</p>
-			
+
 			<p>
 				<h4>Why Tween and Shaper in the same library?</h4>
 				Tweens can highly benefit from shaper functions in order to create an effect called Easing.
 				Easing takes a Tween and passes it through a shaper function before applying it to the animation,
 				which can create much more realistic animations.
 			</p>
-			
+
 			<p>
 				Easing is essentially the transition between moving and not moving, allowing for a gradual acceleration
 				into and out of motion.
 			</p>
 		</div>
-		
+
 		<div class="column two">
 			<p>
 				<h4>Tween Class</h4>
@@ -118,7 +123,7 @@
 				<a href="tween_tick.html">tick()</a><br />
 				<a href="tween_timescale.html">timeScale</a><br />
 			</p>
-			
+
 			<p>
 				<h4>Shaper Class</h4>
 				<a href="shaper.html">Shaper</a><br />
@@ -130,7 +135,7 @@
 				<a href="shaper_clamp.html">clamp()</a><br />
 				<a href="shaper_noclamp.html">noClamp()</a><br />
 			</p>
-			
+
 			<p>
 				<h4>Shape Functions (Under Construction)</h4>
 				<a href="shaper_blend.html">BlendShaper</a><br />
@@ -142,7 +147,7 @@
 				<a href="shaper_back.html">BackShaper</a><br />
 				<a href="shaper_bounce.html">BounceShaper</a><br />
 			</p>
-			
+
 			<p>
 				<h4>Example Code (Under Construction)</h4>
 				<a href="example_shapecurve.html">Shape Curve</a><br />
@@ -157,11 +162,11 @@
 				<a href="#">Squash & Stretch</a>
 			</p>
 		</div>
-		
+
 		<div class="footer">
 			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons</a> - Some rights reserved.
 			Maintained by <a href="javascript:noSpam('com','leebyron','lee);">Lee Byron</a>
 		</div>
-		
+
 	</body>
 </html>
