@@ -1,0 +1,311 @@
+8
+
+dir
+30
+svn+ssh://megamu@megamu.com/home/megamu/dump/shapetween/src/megamu/shapetween
+svn+ssh://megamu@megamu.com/home/megamu/dump
+
+
+
+2007-09-10T02:09:23.250912Z
+30
+Lee Byron
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+af7d3494-9231-0410-92b0-a754185f8058
+
+BackShaper.java
+file
+37
+
+
+
+2007-10-03T03:32:31.000000Z
+bcbeaa4e6fed1e4647e3a1c1535e9448
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+BezierShaper.java
+file
+37
+
+
+
+2007-10-03T08:45:03.000000Z
+4ce561b753c46b565c325565401aa7fd
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+BlendShaper.java
+file
+37
+
+
+
+2007-10-03T07:05:36.000000Z
+ddfd454309c5ad339038fb647989cb4d
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+BounceShaper.java
+file
+0
+
+
+add
+
+CircularShaper.java
+file
+38
+
+
+
+2007-10-03T09:49:05.000000Z
+df5425cbe6bceae7b6ff0ee4e80b928f
+2007-10-03T09:49:27.199406Z
+38
+Lee Byron
+
+CosineShaper.java
+file
+37
+
+
+
+2007-10-03T06:30:27.000000Z
+c8223c70624c603a7d8747b6f72d5cc6
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+LinearShaper.java
+file
+37
+
+
+
+2007-10-03T06:42:16.000000Z
+275948063f397737e736969e5ac1cc7b
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+NoiseShaper.java
+file
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+QuadInShaper.java
+file
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+QuadOutShaper.java
+file
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+QuadraticShaper.java
+file
+37
+
+
+
+2007-10-03T06:43:46.000000Z
+512f867ec64faec3e96760bbe881c361
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+ShapeTweenConstants.java
+file
+37
+
+
+
+2007-10-03T01:09:41.000000Z
+d79c71b121f9108eda8bc09296d21d67
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+Shaper.java
+file
+37
+
+
+
+2007-10-03T08:49:34.000000Z
+e5e054c9bb2297b58f93ab3e775fdc71
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+SinInShaper.java
+file
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+SinOutShaper.java
+file
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+SquareShaper.java
+file
+35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+Tween.java
+file
+37
+
+
+
+2007-10-03T06:39:21.000000Z
+da5b746f75576c07efc69eacca869a93
+2007-10-03T09:04:02.174392Z
+37
+Lee Byron
+
+_pattern_Master.java
+file
+35
+
+
+
+2007-09-24T02:24:06.000000Z
+a76c0510003a874d77efc50b1af19645
+2007-09-24T03:25:18.505117Z
+35
+Lee Byron
+
